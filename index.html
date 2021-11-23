@@ -722,6 +722,8 @@
 				evt.currentTarget.className += " active";
 			}
 			// SLIDE MENU
+			
+			if (Math.round(x)<500){var SlideMenuW = '60%'} else {var SlideMenuW = '30%'}
 			var left = '';
 			var contents = '';
 			contents += '<div class="tab"><center>';
@@ -729,7 +731,7 @@
 			contents += '<button class="button" onclick="openDoc(event, '+"'data_bornes'"+')">Bornes</button><hr></center>';
 			contents += "<div id='data_parc' class='tabcontent'></div>"
 			contents += "<div id='data_bornes'class='tabcontent'></div>"
-			var slideMenu = L.control.slideMenu('', {position: 'topleft', menuposition: 'topleft', width: '30%', height: '100%', delay: '40', icon: 'fa fa-bars'}).addTo(map);
+			var slideMenu = L.control.slideMenu('', {position: 'topleft', menuposition: 'topleft', width: SlideMenuW, height: '100%', delay: '40', icon: 'fa fa-bars'}).addTo(map);
 			slideMenu.setContents(left + contents);
 			document.getElementById("defaultOpen").click();
 		</script>
