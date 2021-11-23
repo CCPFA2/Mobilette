@@ -254,14 +254,13 @@
 					}
 					if ('rec' in dataloaded[i].properties){
 						var x = document.createElement("P");
-						x.id = dataloaded[i].id;
+						x.id =i;
 						x.onclick=function zoomToFeature(e){	
-							id =e.target.id	;	
-							var centroid = turf.centroid(data.features[id]);
+							id =e.target.id;
+							var centroid = turf.centroid(Object(data.features[id]));
 							var lon = centroid.geometry.coordinates[0];
 							var lat = centroid.geometry.coordinates[1];
-							
-							var bb=turf.bbox (data.features[id]);
+							var bb=turf.bbox (Object(data.features[id]));
 							const corner1 = [bb[1], bb[0]];
 							const corner2 = [bb[3], bb[2]];
 							var bbBounds=[corner1, corner2];
