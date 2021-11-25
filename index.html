@@ -282,7 +282,7 @@
 							document.getElementById("data_bornes").appendChild(x);
 						}
 					}
-					if ('rec' in dataloaded[i].properties){
+					if ('rec' in dataloaded[i].properties && 'Description' in dataloaded[i].properties){
 						var x = document.createElement("P");
 						x.id =i;
 						x.onclick=function zoomToFeature(e){	
